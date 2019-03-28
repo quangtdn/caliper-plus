@@ -1,0 +1,75 @@
+Profiles:
+  TwoOrgsChannel:
+    Consortium: SampleConsortium
+    Application:
+      Organizations:
+      - Name: Org1MSP
+        ID: Org1MSP
+        MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org1.example.com
+          Port: 7051
+      - Name: Org2MSP
+        ID: Org2MSP
+        MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org2.example.com
+          Port: 7051
+  TwoOrgsOrdererGenesis:
+    Orderer:
+      OrdererType: solo
+      Addresses:
+      - orderer0.example.com:7050
+      BatchTimeout: 2s
+      BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 103809024
+        PreferredMaxBytes: 524288
+      Organizations:
+      - Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/example.com/msp
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - Name: Org1MSP
+          ID: Org1MSP
+          MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org1.example.com
+            Port: 7051
+        - Name: Org2MSP
+          ID: Org2MSP
+          MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org2.example.com
+            Port: 7051
+Organizations:
+- Name: OrdererOrg
+  ID: OrdererMSP
+  MSPDir: crypto-config/ordererOrganizations/example.com/msp
+- Name: Org1MSP
+  ID: Org1MSP
+  MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org1.example.com
+    Port: 7051
+- Name: Org2MSP
+  ID: Org2MSP
+  MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org2.example.com
+    Port: 7051
+Orderer:
+  OrdererType: solo
+  Addresses:
+  - orderer0.example.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 103809024
+    PreferredMaxBytes: 524288
+  Organizations:
+  - Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/example.com/msp

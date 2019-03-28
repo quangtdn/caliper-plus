@@ -1,0 +1,72 @@
+{
+  "caliper": {
+    "blockchain": "fabric"
+  },
+  "fabric": {
+    "cryptodir": "caliperplus/1org2peerscouchdb/crypto-config",
+    "network": {
+      "orderer": {
+        "url": "grpc://192.168.1.105:7050",
+        "mspid": "OrdererMSP",
+        "msp": "caliperplus/1org2peerscouchdb/crypto-config/ordererOrganizations/example.com/msp/",
+        "server-hostname": "orderer.example.com",
+        "tls_cacerts": "caliperplus/1org2peerscouchdb/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt"
+      },
+      "org1": {
+        "name": "peerOrg1",
+        "mspid": "Org1MSP",
+        "msp": "caliperplus/1org2peerscouchdb/crypto-config/peerOrganizations/org1.example.com/msp/",
+        "ca": {
+          "url": "http://192.168.1.105:7054",
+          "name": "ca.org1.example.com"
+        },
+        "peer0": {
+          "requests": "grpc://192.168.1.105:7051",
+          "events": "grpc://192.168.1.105:7053",
+          "server-hostname": "peer0.org1.example.com",
+          "tls_cacerts": "caliperplus/1org2peerscouchdb/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+        }
+      }
+    },
+    "channel": [
+      {
+        "name": "mychannel",
+        "deployed": false,
+        "config": "caliperplus/1org2peerscouchdb/channel-artifacts/channel.tx",
+        "organizations": ["org1"]
+      }
+    ],
+    "chaincodes": [
+      {"id": "marbles", "path": "src/contract/fabric/marbles-norichquery/node", "language":"node", "version": "v1", "channel": "mychannel"},
+      {"id": "simple", "path": "src/contract/fabric/simple/node", "language":"node", "version": "v0", "channel": "mychannel"}
+    ],
+    "endorsement-policy": {
+      "identities": [
+        {
+          "role": {
+            "name": "member",
+            "mspId": "Org1MSP"
+          }
+        },
+        {
+          "role": {
+            "name": "admin",
+            "mspId": "Org1MSP"
+          }
+        }
+      ],
+      "policy": { "1-of": [{"signed-by": 0}]}
+    },
+    "context": {
+      "init": "mychannel",
+      "open": "mychannel",
+      "query": "mychannel"
+    }
+  },
+  "info" : {
+    "Version": "1.1.0",
+    "Size": "1 Org with 2 Peers",
+    "Orderer": "Solo",
+    "Distribution": "Distributed Hosts"
+  }
+}

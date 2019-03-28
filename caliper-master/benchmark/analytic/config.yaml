@@ -1,0 +1,25 @@
+---
+test:
+  name: cpuheavy
+  description: This is analytic benchmark for caliper
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: invoke
+    txNumber:
+    - 1
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 1
+    arguments:
+      block_number: 1000 
+    callback: benchmark/analytic/populate.js
+monitor:
+  type:
+  - docker
+  docker:
+    name:
+    - all
+  interval: 1

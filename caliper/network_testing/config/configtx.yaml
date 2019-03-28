@@ -1,0 +1,126 @@
+Profiles:
+  OrgsChannel:
+    Consortium: SampleConsortium
+    Application:
+      Organizations:
+      - Name: Org1MSP
+        ID: Org1MSP
+        MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+        AdminPrincipal: Role.ADMIN
+        AnchorPeers:
+        - Host: peer0.org1.example.com
+          Port: 7051
+      - Name: Org2MSP
+        ID: Org2MSP
+        MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+        AdminPrincipal: Role.ADMIN
+        AnchorPeers:
+        - Host: peer0.org2.example.com
+          Port: 7051
+      - Name: Org3MSP
+        ID: Org3MSP
+        MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+        AdminPrincipal: Role.ADMIN
+        AnchorPeers:
+        - Host: peer0.org3.example.com
+          Port: 7051
+      - Name: Org4MSP
+        ID: Org4MSP
+        MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
+        AdminPrincipal: Role.ADMIN
+        AnchorPeers:
+        - Host: peer0.org4.example.com
+          Port: 7051
+  OrgsOrdererGenesis:
+    Orderer:
+      OrdererType: solo
+      Addresses:
+      - orderer.example.com:7050
+      BatchTimeout: 2s
+      BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 134217728
+        PreferredMaxBytes: 134217728
+      Organizations:
+      - Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/example.com/msp
+        AdminPrincipal: Role.MEMBER
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - Name: Org1MSP
+          ID: Org1MSP
+          MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+          AdminPrincipal: Role.ADMIN
+          AnchorPeers:
+          - Host: peer0.org1.example.com
+            Port: 7051
+        - Name: Org2MSP
+          ID: Org2MSP
+          MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+          AdminPrincipal: Role.ADMIN
+          AnchorPeers:
+          - Host: peer0.org2.example.com
+            Port: 7051
+        - Name: Org3MSP
+          ID: Org3MSP
+          MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+          AdminPrincipal: Role.ADMIN
+          AnchorPeers:
+          - Host: peer0.org3.example.com
+            Port: 7051
+        - Name: Org4MSP
+          ID: Org4MSP
+          MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
+          AdminPrincipal: Role.ADMIN
+          AnchorPeers:
+          - Host: peer0.org4.example.com
+            Port: 7051
+Organizations:
+- Name: OrdererOrg
+  ID: OrdererMSP
+  MSPDir: crypto-config/ordererOrganizations/example.com/msp
+  AdminPrincipal: Role.MEMBER
+- Name: Org1MSP
+  ID: Org1MSP
+  MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+  AdminPrincipal: Role.ADMIN
+  AnchorPeers:
+  - Host: peer0.org1.example.com
+    Port: 7051
+- Name: Org2MSP
+  ID: Org2MSP
+  MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+  AdminPrincipal: Role.ADMIN
+  AnchorPeers:
+  - Host: peer0.org2.example.com
+    Port: 7051
+- Name: Org3MSP
+  ID: Org3MSP
+  MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+  AdminPrincipal: Role.ADMIN
+  AnchorPeers:
+  - Host: peer0.org3.example.com
+    Port: 7051
+- Name: Org4MSP
+  ID: Org4MSP
+  MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
+  AdminPrincipal: Role.ADMIN
+  AnchorPeers:
+  - Host: peer0.org4.example.com
+    Port: 7051
+Orderer:
+  OrdererType: solo
+  Addresses:
+  - orderer.example.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 134217728
+    PreferredMaxBytes: 134217728
+  Organizations:
+  - Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/example.com/msp
+    AdminPrincipal: Role.MEMBER

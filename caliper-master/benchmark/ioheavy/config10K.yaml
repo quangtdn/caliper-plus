@@ -1,0 +1,37 @@
+---
+test:
+  name: ioheavy_write_scan_10K
+  description: This is ioheavy benchmark to test write and scan 10k transactions
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: write
+    txNumber:
+    - 1
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 1
+    arguments:
+      start_key: 0
+      total_key_num: 10000
+    callback: benchmark/ioheavy/write.js
+  - label: scan
+    txNumber:
+    - 1
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 1
+    arguments:
+      start_key: 0
+      total_key_num: 10000
+    callback: benchmark/ioheavy/scan.js
+monitor:
+  type:
+  - docker
+  docker:
+    name:
+    - all
+  interval: 1

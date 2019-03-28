@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  orderer.example.com:
+    container_name: orderer.example.com
+    image: hyperledger/fabric-orderer:1.1.0
+    environment:
+      - ORDERER_GENERAL_LOGLEVEL=debug
+      - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      - ORDERER_GENERAL_GENESISMETHOD=file
+      - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/orgs.genesis.block
+      - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp/orderer/msp
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=my-net
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: orderer
+    ports:
+      - 7050:7050
+    volumes:
+        - ../config/:/etc/hyperledger/configtx
+        - ../config/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/etc/hyperledger/msp/orderer/msp

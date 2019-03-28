@@ -1,0 +1,109 @@
+Profiles:
+  OrgsChannel:
+    Consortium: SampleConsortium
+    Application:
+      Organizations:
+      - Name: Org1MSP
+        ID: Org1MSP
+        MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org1.example.com
+          Port: 7051
+      - Name: Org2MSP
+        ID: Org2MSP
+        MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org2.example.com
+          Port: 7051
+      - Name: Org3MSP
+        ID: Org3MSP
+        MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org3.example.com
+          Port: 7051
+  OrgsOrdererGenesis:
+    Orderer:
+      OrdererType: kafka
+      Addresses:
+      - orderer0.example.com:7050
+      - orderer1.example.com:7050
+      - orderer2.example.com:7050
+      BatchTimeout: 2s
+      BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 134217728
+        PreferredMaxBytes: 134217728
+      Kafka:
+        Brokers:
+        - kafka0:9092
+        - kafka1:9092
+        - kafka2:9092
+        - kafka3:9092
+      Organizations:
+      - Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/example.com/msp
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - Name: Org1MSP
+          ID: Org1MSP
+          MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org1.example.com
+            Port: 7051
+        - Name: Org2MSP
+          ID: Org2MSP
+          MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org2.example.com
+            Port: 7051
+        - Name: Org3MSP
+          ID: Org3MSP
+          MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org3.example.com
+            Port: 7051
+Organizations:
+- Name: OrdererOrg
+  ID: OrdererMSP
+  MSPDir: crypto-config/ordererOrganizations/example.com/msp
+- Name: Org1MSP
+  ID: Org1MSP
+  MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org1.example.com
+    Port: 7051
+- Name: Org2MSP
+  ID: Org2MSP
+  MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org2.example.com
+    Port: 7051
+- Name: Org3MSP
+  ID: Org3MSP
+  MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org3.example.com
+    Port: 7051
+Orderer:
+  OrdererType: kafka
+  Addresses:
+  - orderer0.example.com:7050
+  - orderer1.example.com:7050
+  - orderer2.example.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 134217728
+    PreferredMaxBytes: 134217728
+  Kafka:
+    Brokers:
+    - kafka0:9092
+    - kafka1:9092
+    - kafka2:9092
+    - kafka3:9092
+  Organizations:
+  - Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/example.com/msp

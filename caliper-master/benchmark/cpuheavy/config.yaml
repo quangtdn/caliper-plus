@@ -1,0 +1,33 @@
+---
+test:
+  name: cpuheavy
+  description: This is cpuheavy benchmark for caliper
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: invoke
+    txNumber:
+    - 10
+    - 10
+    - 10
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 1
+    - type: fixed-rate
+      opts:
+        tps: 2
+    - type: fixed-rate
+      opts:
+        tps: 3
+    arguments:
+      arraySize: 100 
+    callback: benchmark/cpuheavy/invoke.js
+monitor:
+  type:
+  - docker
+  docker:
+    name:
+    - all
+  interval: 1

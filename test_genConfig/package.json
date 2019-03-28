@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "./run.sh",
+    "start-solo": "./run-solo.sh",
+    "stop": "./stop.sh",
+    "build-tools": "./build.sh",
+    "genConfig": "go run genConfig/*.go",
+    "genArtifacts": "./generateArtifacts.sh",
+    "portainer":
+      "docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/portainer:/data portainer/portainer"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=2.15.9"
+  },
+  "license": "Apache-2.0"
+}
