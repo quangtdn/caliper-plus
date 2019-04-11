@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/users/quangtdn/.nvm/versions/node/v8.9.4/bin/node',
+1 verbose cli   '/users/quangtdn/.nvm/versions/node/v8.9.4/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'bench',
+1 verbose cli   '--',
+1 verbose cli   '-c',
+1 verbose cli   'benchmark-kafka/smallbank/saturate-1host.yaml',
+1 verbose cli   '-n',
+1 verbose cli   'network-kafka/16peer4ord8kafka/fabric-ccp-mynet.yaml' ]
+2 info using npm@5.6.0
+3 info using node@v8.9.4
+4 verbose config Skipping project config: /users/quangtdn/.npmrc. (matches userconfig)
+5 verbose stack Error: ENOENT: no such file or directory, open '/users/quangtdn/package.json'
+6 verbose cwd /users/quangtdn
+7 verbose Linux 4.4.0-143-generic
+8 verbose argv "/users/quangtdn/.nvm/versions/node/v8.9.4/bin/node" "/users/quangtdn/.nvm/versions/node/v8.9.4/bin/npm" "run" "bench" "--" "-c" "benchmark-kafka/smallbank/saturate-1host.yaml" "-n" "network-kafka/16peer4ord8kafka/fabric-ccp-mynet.yaml"
+9 verbose node v8.9.4
+10 verbose npm  v5.6.0
+11 error path /users/quangtdn/package.json
+12 error code ENOENT
+13 error errno -2
+14 error syscall open
+15 error enoent ENOENT: no such file or directory, open '/users/quangtdn/package.json'
+16 error enoent This is related to npm not being able to find a file.
+17 verbose exit [ -2, true ]

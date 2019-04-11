@@ -18,8 +18,8 @@ caliper:
   blockchain: fabric-ccp
 info:
   Version: 1.1.0
-  Size: 2 Orgs with 1 Peer
-  Orderer: Solo
+  Size: 1 Org with 3 Peers
+  Orderer: Kafka
   Distribution: Single Host
   StateDB: CouchDB
 
@@ -32,13 +32,13 @@ clients:
         cryptoStore:
           path: /tmp/hfc-cvs/org1
       clientPrivateKey:
-        path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/key.pem
+        path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/key.pem
       clientSignedCert:
-        path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem
+        path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem
 
 channels:
   mychannel:
-    configBinary: /../hlf-deployment/network-config/channel.tx
+    configBinary: ../hlf-deployment/network-config/channel.tx
     created: false
     orderers:
     - orderer0.example.com
@@ -73,9 +73,9 @@ organizations:
     certificateAuthorities:
     - ca.org1.example.com
     adminPrivateKey:
-      path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/key.pem
+      path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/key.pem
     signedCert:
-      path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
 
 orderers:
   orderer0.example.com:
@@ -83,21 +83,21 @@ orderers:
     grpcOptions:
       ssl-target-name-override: orderer0.example.com
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
   orderer1.example.com:
     url: grpcs://localhost:8050
     grpcOptions:
       ssl-target-name-override: orderer1.example.com
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
   orderer2.example.com:
     url: grpcs://localhost:9050
     grpcOptions:
       ssl-target-name-override: orderer2.example.com
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
 peers:
   peer0.org1.example.com:
@@ -106,7 +106,7 @@ peers:
       ssl-target-name-override: peer0.org1.example.com
       grpc.keepalive_time_ms: 600000
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
 
   peer1.org1.example.com:
     url: grpcs://localhost:8051
@@ -114,7 +114,7 @@ peers:
       ssl-target-name-override: peer1.org1.example.com
       grpc.keepalive_time_ms: 600000
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
 
   peer2.org1.example.com:
     url: grpcs://localhost:9051
@@ -122,7 +122,7 @@ peers:
       ssl-target-name-override: peer2.org1.example.com
       grpc.keepalive_time_ms: 600000
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
 
 
 certificateAuthorities:
@@ -131,7 +131,7 @@ certificateAuthorities:
     httpOptions:
       verify: false
     tlsCACerts:
-      path: /../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+      path: ../hlf-deployment/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
     registrar:
     - enrollId: admin
       enrollSecret: adminpw

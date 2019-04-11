@@ -1,0 +1,1016 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Fabric
+version: "1.0"
+mutual-tls: false
+
+caliper:
+  blockchain: fabric-ccp
+
+info:
+  Version: 1.1.0
+  Size: 4 Orgs with 1 Peer
+  Orderer: 4 Kafka orderers
+  Distribution: Multiple Host
+  StateDB: GoLevelDB
+
+clients:
+  client0.org1.example.com:
+    client:
+      organization: Org1
+      credentialStore:
+        path: /tmp/hfc-kvs/org1
+        cryptoStore:
+          path: /tmp/hfc-cvs/org1
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem
+
+  client0.org2.example.com:
+    client:
+      organization: Org2
+      credentialStore:
+        path: /tmp/hfc-kvs/org2
+        cryptoStore:
+          path: /tmp/hfc-cvs/org2
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/signcerts/User1@org2.example.com-cert.pem
+
+  client0.org3.example.com:
+    client:
+      organization: Org3
+      credentialStore:
+        path: /tmp/hfc-kvs/org3
+        cryptoStore:
+          path: /tmp/hfc-cvs/org3
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org3.example.com/users/User1@org3.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org3.example.com/users/User1@org3.example.com/msp/signcerts/User1@org3.example.com-cert.pem
+
+  client0.org4.example.com:
+    client:
+      organization: Org4
+      credentialStore:
+        path: /tmp/hfc-kvs/org4
+        cryptoStore:
+          path: /tmp/hfc-cvs/org4
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org4.example.com/users/User1@org4.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org4.example.com/users/User1@org4.example.com/msp/signcerts/User1@org4.example.com-cert.pem
+
+  client0.org5.example.com:
+    client:
+      organization: Org5
+      credentialStore:
+        path: /tmp/hfc-kvs/org5
+        cryptoStore:
+          path: /tmp/hfc-cvs/org5
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org5.example.com/users/User1@org5.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org5.example.com/users/User1@org5.example.com/msp/signcerts/User1@org5.example.com-cert.pem
+
+  client0.org6.example.com:
+    client:
+      organization: Org6
+      credentialStore:
+        path: /tmp/hfc-kvs/org6
+        cryptoStore:
+          path: /tmp/hfc-cvs/org6
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org6.example.com/users/User1@org6.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org6.example.com/users/User1@org6.example.com/msp/signcerts/User1@org6.example.com-cert.pem
+
+  client0.org7.example.com:
+    client:
+      organization: Org7
+      credentialStore:
+        path: /tmp/hfc-kvs/org7
+        cryptoStore:
+          path: /tmp/hfc-cvs/org7
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org7.example.com/users/User1@org7.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org7.example.com/users/User1@org7.example.com/msp/signcerts/User1@org7.example.com-cert.pem
+
+  client0.org8.example.com:
+    client:
+      organization: Org8
+      credentialStore:
+        path: /tmp/hfc-kvs/org8
+        cryptoStore:
+          path: /tmp/hfc-cvs/org8
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org8.example.com/users/User1@org8.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org8.example.com/users/User1@org8.example.com/msp/signcerts/User1@org8.example.com-cert.pem
+
+  client0.org9.example.com:
+    client:
+      organization: Org9
+      credentialStore:
+        path: /tmp/hfc-kvs/org9
+        cryptoStore:
+          path: /tmp/hfc-cvs/org9
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org9.example.com/users/User1@org9.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org9.example.com/users/User1@org9.example.com/msp/signcerts/User1@org9.example.com-cert.pem
+
+  client0.org10.example.com:
+    client:
+      organization: Org10
+      credentialStore:
+        path: /tmp/hfc-kvs/org10
+        cryptoStore:
+          path: /tmp/hfc-cvs/org10
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org10.example.com/users/User1@org10.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org10.example.com/users/User1@org10.example.com/msp/signcerts/User1@org10.example.com-cert.pem
+
+  client0.org11.example.com:
+    client:
+      organization: Org11
+      credentialStore:
+        path: /tmp/hfc-kvs/org11
+        cryptoStore:
+          path: /tmp/hfc-cvs/org11
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org11.example.com/users/User1@org11.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org11.example.com/users/User1@org11.example.com/msp/signcerts/User1@org11.example.com-cert.pem
+
+  client0.org12.example.com:
+    client:
+      organization: Org12
+      credentialStore:
+        path: /tmp/hfc-kvs/org12
+        cryptoStore:
+          path: /tmp/hfc-cvs/org12
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org12.example.com/users/User1@org12.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org12.example.com/users/User1@org12.example.com/msp/signcerts/User1@org12.example.com-cert.pem
+
+  client0.org13.example.com:
+    client:
+      organization: Org13
+      credentialStore:
+        path: /tmp/hfc-kvs/org13
+        cryptoStore:
+          path: /tmp/hfc-cvs/org13
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org13.example.com/users/User1@org13.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org13.example.com/users/User1@org13.example.com/msp/signcerts/User1@org13.example.com-cert.pem
+
+  client0.org14.example.com:
+    client:
+      organization: Org14
+      credentialStore:
+        path: /tmp/hfc-kvs/org14
+        cryptoStore:
+          path: /tmp/hfc-cvs/org14
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org14.example.com/users/User1@org14.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org14.example.com/users/User1@org14.example.com/msp/signcerts/User1@org14.example.com-cert.pem
+
+  client0.org15.example.com:
+    client:
+      organization: Org15
+      credentialStore:
+        path: /tmp/hfc-kvs/org15
+        cryptoStore:
+          path: /tmp/hfc-cvs/org15
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org15.example.com/users/User1@org15.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org15.example.com/users/User1@org15.example.com/msp/signcerts/User1@org15.example.com-cert.pem
+
+  client0.org16.example.com:
+    client:
+      organization: Org16
+      credentialStore:
+        path: /tmp/hfc-kvs/org16
+        cryptoStore:
+          path: /tmp/hfc-cvs/org16
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org16.example.com/users/User1@org16.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org16.example.com/users/User1@org16.example.com/msp/signcerts/User1@org16.example.com-cert.pem
+
+  client0.org17.example.com:
+    client:
+      organization: Org17
+      credentialStore:
+        path: /tmp/hfc-kvs/org17
+        cryptoStore:
+          path: /tmp/hfc-cvs/org17
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org17.example.com/users/User1@org17.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org17.example.com/users/User1@org17.example.com/msp/signcerts/User1@org17.example.com-cert.pem
+
+  client0.org18.example.com:
+    client:
+      organization: Org18
+      credentialStore:
+        path: /tmp/hfc-kvs/org18
+        cryptoStore:
+          path: /tmp/hfc-cvs/org18
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org18.example.com/users/User1@org18.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org18.example.com/users/User1@org18.example.com/msp/signcerts/User1@org18.example.com-cert.pem
+
+  client0.org19.example.com:
+    client:
+      organization: Org19
+      credentialStore:
+        path: /tmp/hfc-kvs/org19
+        cryptoStore:
+          path: /tmp/hfc-cvs/org19
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org19.example.com/users/User1@org19.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org19.example.com/users/User1@org19.example.com/msp/signcerts/User1@org19.example.com-cert.pem
+
+  client0.org20.example.com:
+    client:
+      organization: Org20
+      credentialStore:
+        path: /tmp/hfc-kvs/org20
+        cryptoStore:
+          path: /tmp/hfc-cvs/org20
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org20.example.com/users/User1@org20.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org20.example.com/users/User1@org20.example.com/msp/signcerts/User1@org20.example.com-cert.pem
+
+  client0.org21.example.com:
+    client:
+      organization: Org21
+      credentialStore:
+        path: /tmp/hfc-kvs/org21
+        cryptoStore:
+          path: /tmp/hfc-cvs/org21
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org21.example.com/users/User1@org21.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org21.example.com/users/User1@org21.example.com/msp/signcerts/User1@org21.example.com-cert.pem
+
+  client0.org22.example.com:
+    client:
+      organization: Org22
+      credentialStore:
+        path: /tmp/hfc-kvs/org22
+        cryptoStore:
+          path: /tmp/hfc-cvs/org22
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org22.example.com/users/User1@org22.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org22.example.com/users/User1@org22.example.com/msp/signcerts/User1@org22.example.com-cert.pem
+
+  client0.org23.example.com:
+    client:
+      organization: Org23
+      credentialStore:
+        path: /tmp/hfc-kvs/org23
+        cryptoStore:
+          path: /tmp/hfc-cvs/org23
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org23.example.com/users/User1@org23.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org23.example.com/users/User1@org23.example.com/msp/signcerts/User1@org23.example.com-cert.pem
+
+  client0.org24.example.com:
+    client:
+      organization: Org24
+      credentialStore:
+        path: /tmp/hfc-kvs/org24
+        cryptoStore:
+          path: /tmp/hfc-cvs/org24
+      clientPrivateKey:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org24.example.com/users/User1@org24.example.com/msp/keystore/key.pem
+      clientSignedCert:
+        path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org24.example.com/users/User1@org24.example.com/msp/signcerts/User1@org24.example.com-cert.pem
+
+
+channels:
+  mychannel:
+    configBinary: ../kafka-network/24peer4ord4kafka/network-config/channel.tx
+    created: true
+    orderers:
+    - orderer0.example.com
+    - orderer1.example.com
+    - orderer2.example.com
+    - orderer3.example.com
+
+    peers:
+      peer0.org1.example.com:
+        eventSource: true
+      peer0.org2.example.com:
+        eventSource: true
+      peer0.org3.example.com:
+        eventSource: true
+      peer0.org4.example.com:
+        eventSource: true
+      peer0.org5.example.com:
+        eventSource: true
+      peer0.org6.example.com:
+        eventSource: true
+      peer0.org7.example.com:
+        eventSource: true
+      peer0.org8.example.com:
+        eventSource: true
+      peer0.org9.example.com:
+        eventSource: true
+      peer0.org10.example.com:
+        eventSource: true
+      peer0.org11.example.com:
+        eventSource: true
+      peer0.org12.example.com:
+        eventSource: true
+      peer0.org13.example.com:
+        eventSource: true
+      peer0.org14.example.com:
+        eventSource: true
+      peer0.org15.example.com:
+        eventSource: true
+      peer0.org16.example.com:
+        eventSource: true
+      peer0.org17.example.com:
+        eventSource: true
+      peer0.org18.example.com:
+        eventSource: true
+      peer0.org19.example.com:
+        eventSource: true
+      peer0.org20.example.com:
+        eventSource: true
+      peer0.org21.example.com:
+        eventSource: true
+      peer0.org22.example.com:
+        eventSource: true
+      peer0.org23.example.com:
+        eventSource: true
+      peer0.org24.example.com:
+        eventSource: true
+
+    chaincodes:
+    - id: marbles
+      version: v0
+      language: node
+      path: src/contract/fabric/marbles/node
+      metadataPath: src/contract/fabric/marbles/node/metadata
+    - id: simple
+      version: v0
+      language: node
+      path: src/contract/fabric/simple/node
+    - id: smallbank
+      version: v0
+      language: golang
+      path: contract/fabric/smallbank
+
+organizations:
+  Org1:
+    mspid: Org1MSP
+    peers:
+    - peer0.org1.example.com
+    certificateAuthorities:
+    - ca.org1.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
+
+  Org2:
+    mspid: Org2MSP
+    peers:
+    - peer0.org2.example.com
+    certificateAuthorities:
+    - ca.org2.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/Admin@org2.example.com-cert.pem
+
+  Org3:
+    mspid: Org3MSP
+    peers:
+    - peer0.org3.example.com
+    certificateAuthorities:
+    - ca.org3.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp/signcerts/Admin@org3.example.com-cert.pem
+
+  Org4:
+    mspid: Org4MSP
+    peers:
+    - peer0.org4.example.com
+    certificateAuthorities:
+    - ca.org4.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp/signcerts/Admin@org4.example.com-cert.pem
+
+  Org5:
+    mspid: Org5MSP
+    peers:
+    - peer0.org5.example.com
+    certificateAuthorities:
+    - ca.org5.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org5.example.com/users/Admin@org5.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org5.example.com/users/Admin@org5.example.com/msp/signcerts/Admin@org5.example.com-cert.pem
+
+  Org6:
+    mspid: Org6MSP
+    peers:
+    - peer0.org6.example.com
+    certificateAuthorities:
+    - ca.org6.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org6.example.com/users/Admin@org6.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org6.example.com/users/Admin@org6.example.com/msp/signcerts/Admin@org6.example.com-cert.pem
+
+  Org7:
+    mspid: Org7MSP
+    peers:
+    - peer0.org7.example.com
+    certificateAuthorities:
+    - ca.org7.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org7.example.com/users/Admin@org7.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org7.example.com/users/Admin@org7.example.com/msp/signcerts/Admin@org7.example.com-cert.pem
+
+  Org8:
+    mspid: Org8MSP
+    peers:
+    - peer0.org8.example.com
+    certificateAuthorities:
+    - ca.org8.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org8.example.com/users/Admin@org8.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org8.example.com/users/Admin@org8.example.com/msp/signcerts/Admin@org8.example.com-cert.pem
+
+  Org9:
+    mspid: Org9MSP
+    peers:
+    - peer0.org9.example.com
+    certificateAuthorities:
+    - ca.org9.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org9.example.com/users/Admin@org9.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org9.example.com/users/Admin@org9.example.com/msp/signcerts/Admin@org9.example.com-cert.pem
+
+  Org10:
+    mspid: Org10MSP
+    peers:
+    - peer0.org10.example.com
+    certificateAuthorities:
+    - ca.org10.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org10.example.com/users/Admin@org10.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org10.example.com/users/Admin@org10.example.com/msp/signcerts/Admin@org10.example.com-cert.pem
+
+  Org11:
+    mspid: Org11MSP
+    peers:
+    - peer0.org11.example.com
+    certificateAuthorities:
+    - ca.org11.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org11.example.com/users/Admin@org11.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org11.example.com/users/Admin@org11.example.com/msp/signcerts/Admin@org11.example.com-cert.pem
+
+  Org12:
+    mspid: Org12MSP
+    peers:
+    - peer0.org12.example.com
+    certificateAuthorities:
+    - ca.org12.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org12.example.com/users/Admin@org12.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org12.example.com/users/Admin@org12.example.com/msp/signcerts/Admin@org12.example.com-cert.pem
+
+  Org13:
+    mspid: Org13MSP
+    peers:
+    - peer0.org13.example.com
+    certificateAuthorities:
+    - ca.org13.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org13.example.com/users/Admin@org13.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org13.example.com/users/Admin@org13.example.com/msp/signcerts/Admin@org13.example.com-cert.pem
+
+  Org14:
+    mspid: Org14MSP
+    peers:
+    - peer0.org14.example.com
+    certificateAuthorities:
+    - ca.org14.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org14.example.com/users/Admin@org14.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org14.example.com/users/Admin@org14.example.com/msp/signcerts/Admin@org14.example.com-cert.pem
+
+  Org15:
+    mspid: Org15MSP
+    peers:
+    - peer0.org15.example.com
+    certificateAuthorities:
+    - ca.org15.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org15.example.com/users/Admin@org15.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org15.example.com/users/Admin@org15.example.com/msp/signcerts/Admin@org15.example.com-cert.pem
+
+  Org16:
+    mspid: Org16MSP
+    peers:
+    - peer0.org16.example.com
+    certificateAuthorities:
+    - ca.org16.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org16.example.com/users/Admin@org16.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org16.example.com/users/Admin@org16.example.com/msp/signcerts/Admin@org16.example.com-cert.pem
+
+  Org17:
+    mspid: Org17MSP
+    peers:
+    - peer0.org17.example.com
+    certificateAuthorities:
+    - ca.org17.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org17.example.com/users/Admin@org17.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org17.example.com/users/Admin@org17.example.com/msp/signcerts/Admin@org17.example.com-cert.pem
+
+  Org18:
+    mspid: Org18MSP
+    peers:
+    - peer0.org18.example.com
+    certificateAuthorities:
+    - ca.org18.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org18.example.com/users/Admin@org18.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org18.example.com/users/Admin@org18.example.com/msp/signcerts/Admin@org18.example.com-cert.pem
+
+  Org19:
+    mspid: Org19MSP
+    peers:
+    - peer0.org19.example.com
+    certificateAuthorities:
+    - ca.org19.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org19.example.com/users/Admin@org19.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org19.example.com/users/Admin@org19.example.com/msp/signcerts/Admin@org19.example.com-cert.pem
+
+  Org20:
+    mspid: Org20MSP
+    peers:
+    - peer0.org20.example.com
+    certificateAuthorities:
+    - ca.org20.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org20.example.com/users/Admin@org20.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org20.example.com/users/Admin@org20.example.com/msp/signcerts/Admin@org20.example.com-cert.pem
+
+  Org21:
+    mspid: Org21MSP
+    peers:
+    - peer0.org21.example.com
+    certificateAuthorities:
+    - ca.org21.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org21.example.com/users/Admin@org21.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org21.example.com/users/Admin@org21.example.com/msp/signcerts/Admin@org21.example.com-cert.pem
+
+  Org22:
+    mspid: Org22MSP
+    peers:
+    - peer0.org22.example.com
+    certificateAuthorities:
+    - ca.org22.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org22.example.com/users/Admin@org22.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org22.example.com/users/Admin@org22.example.com/msp/signcerts/Admin@org22.example.com-cert.pem
+
+  Org23:
+    mspid: Org23MSP
+    peers:
+    - peer0.org23.example.com
+    certificateAuthorities:
+    - ca.org23.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org23.example.com/users/Admin@org23.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org23.example.com/users/Admin@org23.example.com/msp/signcerts/Admin@org23.example.com-cert.pem
+
+  Org24:
+    mspid: Org24MSP
+    peers:
+    - peer0.org24.example.com
+    certificateAuthorities:
+    - ca.org24.example.com
+    adminPrivateKey:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org24.example.com/users/Admin@org24.example.com/msp/keystore/key.pem
+    signedCert:
+      path: ../kafka-network/24peer4ord4kafka/crypto-config/peerOrganizations/org24.example.com/users/Admin@org24.example.com/msp/signcerts/Admin@org24.example.com-cert.pem
+
+
+orderers:
+  orderer0.example.com:
+    url: grpc://10.0.0.10:8050
+    grpcOptions:
+      ssl-target-name-override: orderer0.example.com
+
+  orderer1.example.com:
+    url: grpc://10.0.0.11:8050
+    grpcOptions:
+      ssl-target-name-override: orderer1.example.com
+
+  orderer2.example.com:
+    url: grpc://10.0.0.12:9050
+    grpcOptions:
+      ssl-target-name-override: orderer2.example.com
+
+  orderer3.example.com:
+    url: grpc://10.0.0.13:8050
+    grpcOptions:
+      ssl-target-name-override: orderer3.example.com
+
+peers:
+  peer0.org1.example.com:
+    url: grpc://10.0.0.16:7051
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org2.example.com:
+    url: grpc://10.0.0.17:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org3.example.com:
+    url: grpc://10.0.0.18:9051
+    grpcOptions:
+      ssl-target-name-override: peer0.org3.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org4.example.com:
+    url: grpc://10.0.0.19:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org4.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org5.example.com:
+    url: grpc://10.0.0.20:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org5.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org6.example.com:
+    url: grpc://10.0.0.21:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org6.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org7.example.com:
+    url: grpc://10.0.0.22:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org7.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org8.example.com:
+    url: grpc://10.0.0.23:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org8.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org9.example.com:
+    url: grpc://10.0.0.24:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org9.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org10.example.com:
+    url: grpc://10.0.0.25:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org10.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org11.example.com:
+    url: grpc://10.0.0.26:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org11.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org12.example.com:
+    url: grpc://10.0.0.27:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org12.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org13.example.com:
+    url: grpc://10.0.0.28:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org13.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org14.example.com:
+    url: grpc://10.0.0.29:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org14.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org15.example.com:
+    url: grpc://10.0.0.30:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org15.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org16.example.com:
+    url: grpc://10.0.0.31:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org16.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org17.example.com:
+    url: grpc://10.0.0.32:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org17.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org18.example.com:
+    url: grpc://10.0.0.33:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org18.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org19.example.com:
+    url: grpc://10.0.0.34:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org19.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org20.example.com:
+    url: grpc://10.0.0.35:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org20.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org21.example.com:
+    url: grpc://10.0.0.36:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org21.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org22.example.com:
+    url: grpc://10.0.0.37:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org22.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org23.example.com:
+    url: grpc://10.0.0.38:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org23.example.com
+      grpc.keepalive_time_ms: 600000
+
+  peer0.org24.example.com:
+    url: grpc://10.0.0.39:8051
+    grpcOptions:
+      ssl-target-name-override: peer0.org24.example.com
+      grpc.keepalive_time_ms: 600000
+
+
+certificateAuthorities:
+  ca.org1.example.com:
+    url: http://10.0.0.16:7054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org2.example.com:
+    url: http://10.0.0.17:8054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org3.example.com:
+    url: http://10.0.0.18:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org4.example.com:
+    url: http://10.0.0.19:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org5.example.com:
+    url: http://10.0.0.20:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org6.example.com:
+    url: http://10.0.0.21:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org7.example.com:
+    url: http://10.0.0.22:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org8.example.com:
+    url: http://10.0.0.23:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org9.example.com:
+    url: http://10.0.0.24:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org10.example.com:
+    url: http://10.0.0.25:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org11.example.com:
+    url: http://10.0.0.26:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org12.example.com:
+    url: http://10.0.0.27:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org13.example.com:
+    url: http://10.0.0.28:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org14.example.com:
+    url: http://10.0.0.29:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org15.example.com:
+    url: http://10.0.0.30:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org16.example.com:
+    url: http://10.0.0.31:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org17.example.com:
+    url: http://10.0.0.32:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org18.example.com:
+    url: http://10.0.0.33:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org19.example.com:
+    url: http://10.0.0.34:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org20.example.com:
+    url: http://10.0.0.35:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org21.example.com:
+    url: http://10.0.0.36:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org22.example.com:
+    url: http://10.0.0.37:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org23.example.com:
+    url: http://10.0.0.38:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw
+
+  ca.org24.example.com:
+    url: http://10.0.0.39:6054
+    httpOptions:
+      verify: false
+    registrar:
+    - enrollId: admin
+      enrollSecret: adminpw

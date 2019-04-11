@@ -1,0 +1,51 @@
+---
+test:
+  name: smallbank
+  description: Caliper Experiments finding saturation point r * 10 * numClients
+  clients:
+    type: zookeeper
+    zoo:
+      server: 10.0.0.25:2181
+      clientsPerHost: 10
+  rounds:
+  - label: smallOperations
+    txDuration:
+    - 80
+    - 80
+    - 80
+    - 80
+    - 80
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 260
+    - type: fixed-rate
+      opts:
+        tps: 280
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 320
+    - type: fixed-rate
+      opts:
+        tps: 340
+    arguments:
+      accounts: 60000
+      txnPerBatch: 1
+    callback: benchmark/smallbank/smallbankOperations.js
+  - label: query
+    txNumber:
+    - 5000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 500
+    callback: benchmark/smallbank/query.js
+monitor:
+  type: docker
+  docker:
+    name:
+    - all
+  interval: 1

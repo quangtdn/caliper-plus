@@ -1,0 +1,59 @@
+---
+test:
+  name: smallbank
+  description: Caliper Experiments batchsize 1 Increasing rate r * 8 * numClients
+  clients:
+    type: zookeeper
+    zoo:
+      server: 10.0.0.25:2181
+      clientsPerHost: 8
+  rounds:
+  - label: smallOperations
+    txDuration:
+    - 120
+    - 120
+    - 120
+    - 120
+    - 120
+    - 120
+    - 120
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 150
+    - type: fixed-rate
+      opts:
+        tps: 250
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 350
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 450
+    arguments:
+      accounts: 60000
+      txnPerBatch: 1
+    callback: benchmark/smallbank/smallbankOperations.js
+  - label: query
+    txNumber:
+    - 5000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 500
+    callback: benchmark/smallbank/query.js
+monitor:
+  type: docker
+  docker:
+    name:
+    - all
+  interval: 1

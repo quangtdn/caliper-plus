@@ -11,29 +11,32 @@ Z=$4
 
 set -x
 
-cd `dirname ${BASH_SOURCE-$0}`
-WORKINGDIR=`pwd`
-KAFKADIR="$WORKINGDIR/hlf-deployment-kafka/deployment"
+#STARTNODE=28
+#ORDERINGNODE=16
+#ZOOKEEPERNODE=$(($ORDERINGNODE + $O))
+#KAFKANODE=$(($ORDERINGNODE + $O))
 
-STARTNODE=20
-ORDERINGNODE=30
-ZOOKEEPERNODE=$(($ORDERINGNODE + $O))
-KAFKANODE=$(($ZOOKEEPERNODE + $Z))
+INSYNC_REPLICAS=2
+#REPLICATION_FACTOR=2
+REPLICATION_FACTOR=$(($K - 1))
+
+STARTNODE=16
+ZOOKEEPERNODE=10
+ORDERINGNODE=10
+KAFKANODE=33
+#KAFKANODE=40 
 NETWORKNAME="my-net"
+WORKINGDIR="$HOME/kafka-network/${N}peer${O}ord${K}kafka/deployment"
 PEERLINK=""
-
-# if dstat is not needed, replace the command with some other command that does not affect the system, e.g., hostname
-# DSTAT_CMD="hostname"
-DSTAT_CMD="dstat -t -c -C total -d --disk-tps -m -n --integer --noheader --nocolor > /data/dumi/dstat.log 2>&1"
 
 declare -a CASERVER
 declare -a PEERREQ
 declare -a PEEREVENT
 declare -a ORDERERPORT
-CASERVER=(0 7054 8054 6054)
-PEERREQ=(0 7051 8051 9051)
-PEEREVENT=(0 7053 8053 9053)
-ORDERERPORT=(0 8050 8050 9050)
+CASERVER=(0 7054 8054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054 6054)
+PEERREQ=(0 7051 8051 9051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051 8051)
+PEEREVENT=(0 7053 8053 9053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053 8053)
+ORDERERPORT=(0 8050 8050 9050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050 8050)
 
 
 ONE=1
@@ -84,28 +87,24 @@ for IDX in `seq 2 $N`; do
 	NODEIDX=$(($STARTNODE+$IDX-1))
         NODE="slave-$NODEIDX"
 	ssh $NODE "$CMD"
-	ssh $NODE "$DSTAT_CMD"
 done
 
 for IDX in `seq 1 $O`; do
 	NODEIDX=$(($ORDERINGNODE+$IDX-1))
         NODE="slave-$NODEIDX"
 	ssh $NODE "$CMD"
-	ssh $NODE "$DSTAT_CMD"
 done
 
 for IDX in `seq 1 $K`; do
 	NODEIDX=$(($KAFKANODE+$IDX-1))
         NODE="slave-$NODEIDX"
 	ssh $NODE "$CMD"
-	ssh $NODE "$DSTAT_CMD"
 done
 
 for IDX in `seq 1 $Z`; do
 	NODEIDX=$(($ZOOKEEPERNODE+$IDX-1))
         NODE="slave-$NODEIDX"
 	ssh $NODE "$CMD"
-	ssh $NODE "$DSTAT_CMD"
 done
 
 # create network
@@ -118,7 +117,7 @@ for IDX in `seq 1 $N`; do
 	ORGNAME="org$IDX.example.com"
 	CANAME="ca.$ORGNAME"
 	CA_SERVER=${CASERVER[$IDX]}
-	ssh $NODE "cd $WORKINGDIR && docker run --rm -it -d --network=$NETWORKNAME --name $CANAME -p $CA_SERVER:7054 -e FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server -e FABRIC_CA_SERVER_CA_NAME=$CANAME -v $WORKINGDIR/../crypto-config/peerOrganizations/$ORGNAME/ca/:/etc/hyperledger/fabric-ca-server-config -e CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=$NETWORKNAME -e FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org$IDX.example.com-cert.pem -e FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/key.pem hyperledger/fabric-ca:1.1.0  sh -c 'fabric-ca-server start -b admin:adminpw'"
+	ssh $NODE "cd $WORKINGDIR &&  docker run --rm -it -d --network=$NETWORKNAME --name $CANAME -p $CA_SERVER:7054 -e FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server -e FABRIC_CA_SERVER_CA_NAME=$CANAME -v $WORKINGDIR/../crypto-config/peerOrganizations/$ORGNAME/ca/:/etc/hyperledger/fabric-ca-server-config -e CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=$NETWORKNAME -e FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org$IDX.example.com-cert.pem -e FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/key.pem hyperledger/fabric-ca:1.1.0  sh -c 'fabric-ca-server start -b admin:adminpw'"
 done
 
 
@@ -155,7 +154,7 @@ sleep 6s
 ORDERER_KAFKA_CONNECT="["
 KAFKALINK=""
 #KAFKA_BASE_ENV=" -p 9092 -e KAFKA_LOG_RETENTION_MS=-1 -e KAFKA_MESSAGE_MAX_BYTES=103809024 -e KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 -e KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false -e KAFKA_DEFAULT_REPLICATION_FACTOR=\${KAFFKA_DEFAULT_REPLICATION_FACTOR} -e KAFKA_MIN_INSYNC_REPLICAS=2 "
-KAFKA_BASE_ENV=" -p 9092 -e KAFKA_ZOOKEEPER_TIMEOUT_MS=36000 -e KAFKA_LOG_RETENTION_MS=-1 -e KAFKA_MESSAGE_MAX_BYTES=103809024 -e KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 -e KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false -e KAFKA_DEFAULT_REPLICATION_FACTOR=2 -e KAFKA_MIN_INSYNC_REPLICAS=2 "
+KAFKA_BASE_ENV=" -p 9092 -e KAFKA_ZOOKEEPER_TIMEOUT_MS=36000 -e KAFKA_LOG_RETENTION_MS=-1 -e KAFKA_MESSAGE_MAX_BYTES=103809024 -e KAFKA_REPLICA_FETCH_MAX_BYTES=103809024 -e KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false -e KAFKA_DEFAULT_REPLICATION_FACTOR=$REPLICATION_FACTOR -e KAFKA_MIN_INSYNC_REPLICAS=$INSYNC_REPLICAS "
 for IDX in `seq 1 $K`; do
 	NODEIDX=$(($KAFKANODE+$IDX-1))
   NODE="slave-$NODEIDX"
@@ -175,7 +174,7 @@ sleep 6s
 
 #start orderer
 ORDERERLINK=""
-ORDERER_BASE_ENV=" -p 7050 -e CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=$NETWORKNAME -e ORDERER_HOME=/var/hyperledger/orderer -e ORDERER_GENERAL_LOGLEVEL=debug -e ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/msp -e ORDERER_GENERAL_LOCALMSPID=OrdererMSP -e ORDERER_GENERAL_LISTENADDRESS=0.0.0.0 -e ORDERER_GENERAL_LISTENPORT=7050 -e ORDERER_GENERAL_LEDGERTYPE=ram -e ORDERER_GENERAL_GENESISMETHOD=file -e ORDERER_GENERAL_GENESISFILE=/var/hyperledger/configs/orderer.block -e CONFIGTX_ORDERER_BATCHSIZE_MAXMESSAGECOUNT=\${CONFIGTX_ORDERER_BATCHSIZE_MAXMESSAGECOUNT} -e CONFIGTX_ORDERER_BATCHTIMEOUT=\${CONFIGTX_ORDERER_BATCHTIMEOUT} -e CONFIGTX_ORDERER_ADDRESSES=[127.0.0.1:7050] -e ORDERER_GENERAL_TLS_ENABLED=\${ORDERER_GENERAL_TLS_ENABLED} -e ORDERER_GENERAL_TLS_PRIVATEKEY=\${ORDERER_GENERAL_TLS_PRIVATEKEY} -e ORDERER_GENERAL_TLS_CERTIFICATE=\${ORDERER_GENERAL_TLS_CERTIFICATE} -e ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/tls/ca.crt] -e ORDERER_TLS_CLIENTAUTHREQUIRED=\${ORDERER_TLS_CLIENTAUTHREQUIRED} -e ORDERER_TLS_CLIENTROOTCAS_FILES=/var/hyperledger/users/Admin@example.com/tls/ca.crt -e ORDERER_TLS_CLIENTCERT_FILE=/var/hyperledger/users/Admin@example.com/tls/client.crt -e ORDERER_TLS_CLIENTKEY_FILE=/var/hyperledger/users/Admin@example.com/tls/client.key"
+ORDERER_BASE_ENV=" -p 7050 -e CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=$NETWORKNAME -e ORDERER_HOME=/var/hyperledger/orderer -e ORDERER_GENERAL_LOGLEVEL=debug -e ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/msp -e ORDERER_GENERAL_LOCALMSPID=OrdererMSP -e ORDERER_GENERAL_LISTENADDRESS=0.0.0.0 -e ORDERER_GENERAL_LISTENPORT=7050 -e ORDERER_GENERAL_LEDGERTYPE=ram -e ORDERER_GENERAL_GENESISMETHOD=file -e ORDERER_GENERAL_GENESISFILE=/var/hyperledger/configs/orderer.block -e CONFIGTX_ORDERER_BATCHSIZE_MAXMESSAGECOUNT=100 -e CONFIGTX_ORDERER_BATCHTIMEOUT=2 -e CONFIGTX_ORDERER_ADDRESSES=[127.0.0.1:7050] -e ORDERER_GENERAL_TLS_ENABLED=\${ORDERER_GENERAL_TLS_ENABLED} -e ORDERER_GENERAL_TLS_PRIVATEKEY=\${ORDERER_GENERAL_TLS_PRIVATEKEY} -e ORDERER_GENERAL_TLS_CERTIFICATE=\${ORDERER_GENERAL_TLS_CERTIFICATE} -e ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/tls/ca.crt] -e ORDERER_TLS_CLIENTAUTHREQUIRED=\${ORDERER_TLS_CLIENTAUTHREQUIRED} -e ORDERER_TLS_CLIENTROOTCAS_FILES=/var/hyperledger/users/Admin@example.com/tls/ca.crt -e ORDERER_TLS_CLIENTCERT_FILE=/var/hyperledger/users/Admin@example.com/tls/client.crt -e ORDERER_TLS_CLIENTKEY_FILE=/var/hyperledger/users/Admin@example.com/tls/client.key"
 
 ORDERER_BASE_ENV="$ORDERER_BASE_ENV -v $WORKINGDIR/../network-config/:/var/hyperledger/configs -v $WORKINGDIR/../crypto-config/ordererOrganizations/example.com/users:/var/hyperledger/users -w /opt/gopath/src/github.com/hyperledger/fabric/orderer"
 
@@ -197,11 +196,11 @@ PEER_BASE_ENV="-e CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock -e CORE_PEER
 #start peer0.org1.example.com
 for IDX in `seq 1 $N`; do
 	NODEIDX=$(($STARTNODE+$IDX-1))
-	NODE="slave-$NODEIDX"
+  NODE="slave-$NODEIDX"
 	PEERNAME="peer0.org$IDX.example.com"
 	PEER_REQ=${PEERREQ[$IDX]}
 	PEER_EVENT=${PEEREVENT[$IDX]}
-	ssh $NODE "cd $WORKINGDIR && docker run --rm -it -d --network=$NETWORKNAME --name $PEERNAME -p $PEER_REQ:7051 -p $PEER_EVENT:7053 $ORDERERLINK  $PEER_BASE_ENV -e CORE_PEER_CHAINCODELISTENADDRESS=$PEERNAME:7052 -e CORE_PEER_ID=$PEERNAME -e CORE_PEER_ADDRESS=$PEERNAME:7051 -e CORE_PEER_GOSSIP_EXTERNALENDPOINT=$PEERNAME:7051 -e CORE_PEER_GOSSIP_ORGLEADER=false -e CORE_PEER_GOSSIP_USELEADERELECTION=true -e CORE_PEER_LOCALMSPID=Org${IDX}MSP -e CORE_PEER_TLS_CLIENTROOTCAS_FILES=/var/hyperledger/users/Admin@org$IDX.example.com/tls/ca.crt -e CORE_PEER_TLS_CLIENTCERT_FILE=/var/hyperledger/users/Admin@org$IDX.example.com/tls/client.crt -e CORE_PEER_TLS_CLIENTKEY_FILE=/var/hyperledger/users/Admin@org$IDX.example.com/tls/client.key  -v $WORKINGDIR/../crypto-config/peerOrganizations/org$IDX.example.com/peers/$PEERNAME/msp:/var/hyperledger/msp -v $WORKINGDIR/../crypto-config/peerOrganizations/org$IDX.example.com/peers/$PEERNAME/tls:/var/hyperledger/tls -v $WORKINGDIR/../crypto-config/peerOrganizations/org$IDX.example.com/users:/var/hyperledger/users  hyperledger/fabric-peer:1.1.0 peer node start"
+  ssh $NODE "cd $WORKINGDIR && docker run --rm -it -d --network=$NETWORKNAME --name $PEERNAME -p $PEER_REQ:7051 -p $PEER_EVENT:7053 $ORDERERLINK  $PEER_BASE_ENV -e CORE_PEER_CHAINCODELISTENADDRESS=$PEERNAME:7052 -e CORE_PEER_ID=$PEERNAME -e CORE_PEER_ADDRESS=$PEERNAME:7051 -e CORE_PEER_GOSSIP_EXTERNALENDPOINT=$PEERNAME:7051 -e CORE_PEER_GOSSIP_ORGLEADER=false -e CORE_PEER_GOSSIP_USELEADERELECTION=true -e CORE_PEER_LOCALMSPID=Org${IDX}MSP -e CORE_PEER_TLS_CLIENTROOTCAS_FILES=/var/hyperledger/users/Admin@org$IDX.example.com/tls/ca.crt -e CORE_PEER_TLS_CLIENTCERT_FILE=/var/hyperledger/users/Admin@org$IDX.example.com/tls/client.crt -e CORE_PEER_TLS_CLIENTKEY_FILE=/var/hyperledger/users/Admin@org$IDX.example.com/tls/client.key  -v $WORKINGDIR/../crypto-config/peerOrganizations/org$IDX.example.com/peers/$PEERNAME/msp:/var/hyperledger/msp -v $WORKINGDIR/../crypto-config/peerOrganizations/org$IDX.example.com/peers/$PEERNAME/tls:/var/hyperledger/tls -v $WORKINGDIR/../crypto-config/peerOrganizations/org$IDX.example.com/users:/var/hyperledger/users  hyperledger/fabric-peer:1.1.0 peer node start"
 
 	#ssh $NODE "cd $WORKINGDIR && docker run --rm -it -d --link orderer.example.com:orderer.example.com $PEERLINK  --network=$NETWORKNAME --name $PEERNAME -p $PEER_REQ:7051 -p $PEER_EVENT:7053 -e CORE_LOGGING_PEER=debug -e CORE_CHAINCODE_LOGGING_LEVEL=DEBUG -e CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock -e CORE_PEER_ID=$PEERNAME -e CORE_PEER_ENDORSER_ENABLED=true -e CORE_PEER_ADDRESS=$PEERNAME:7051 -e CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=$NETWORKNAME -e CORE_PEER_LOCALMSPID=Org"$IDX"MSP -e CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/peer/msp -e CORE_PEER_GOSSIP_USELEADERELECTION=true -e CORE_PEER_GOSSIP_ORGLEADER=false -e CORE_PEER_GOSSIP_EXTERNALENDPOINT=$PEERNAME:7051  -w /opt/gopath/src/github.com/hyperledger/fabric  -v /var/run/:/host/var/run/ -v $WORKINGDIR/../config/mychannel.tx:/etc/hyperledger/configtx/mychannel.tx -v $WORKINGDIR/../config/crypto-config/peerOrganizations/org$IDX.example.com/peers/$PEERNAME/msp:/etc/hyperledger/peer/msp -v $WORKINGDIR/../config/crypto-config/peerOrganizations/org$IDX.example.com/users:/etc/hyperledger/msp/users  hyperledger/fabric-peer:1.1.0 peer node start"
 done

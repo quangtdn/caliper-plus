@@ -6,30 +6,98 @@ Profiles:
       - Name: Org1MSP
         ID: Org1MSP
         MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
-        AdminPrincipal: Role.ADMIN
         AnchorPeers:
         - Host: peer0.org1.example.com
           Port: 7051
       - Name: Org2MSP
         ID: Org2MSP
         MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
-        AdminPrincipal: Role.ADMIN
         AnchorPeers:
         - Host: peer0.org2.example.com
           Port: 7051
       - Name: Org3MSP
         ID: Org3MSP
         MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
-        AdminPrincipal: Role.ADMIN
         AnchorPeers:
         - Host: peer0.org3.example.com
           Port: 7051
       - Name: Org4MSP
         ID: Org4MSP
         MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
-        AdminPrincipal: Role.ADMIN
         AnchorPeers:
         - Host: peer0.org4.example.com
+          Port: 7051
+      - Name: Org5MSP
+        ID: Org5MSP
+        MSPDir: crypto-config/peerOrganizations/org5.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org5.example.com
+          Port: 7051
+      - Name: Org6MSP
+        ID: Org6MSP
+        MSPDir: crypto-config/peerOrganizations/org6.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org6.example.com
+          Port: 7051
+      - Name: Org7MSP
+        ID: Org7MSP
+        MSPDir: crypto-config/peerOrganizations/org7.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org7.example.com
+          Port: 7051
+      - Name: Org8MSP
+        ID: Org8MSP
+        MSPDir: crypto-config/peerOrganizations/org8.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org8.example.com
+          Port: 7051
+      - Name: Org9MSP
+        ID: Org9MSP
+        MSPDir: crypto-config/peerOrganizations/org9.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org9.example.com
+          Port: 7051
+      - Name: Org10MSP
+        ID: Org10MSP
+        MSPDir: crypto-config/peerOrganizations/org10.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org10.example.com
+          Port: 7051
+      - Name: Org11MSP
+        ID: Org11MSP
+        MSPDir: crypto-config/peerOrganizations/org11.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org11.example.com
+          Port: 7051
+      - Name: Org12MSP
+        ID: Org12MSP
+        MSPDir: crypto-config/peerOrganizations/org12.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org12.example.com
+          Port: 7051
+      - Name: Org13MSP
+        ID: Org13MSP
+        MSPDir: crypto-config/peerOrganizations/org13.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org13.example.com
+          Port: 7051
+      - Name: Org14MSP
+        ID: Org14MSP
+        MSPDir: crypto-config/peerOrganizations/org14.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org14.example.com
+          Port: 7051
+      - Name: Org15MSP
+        ID: Org15MSP
+        MSPDir: crypto-config/peerOrganizations/org15.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org15.example.com
+          Port: 7051
+      - Name: Org16MSP
+        ID: Org16MSP
+        MSPDir: crypto-config/peerOrganizations/org16.example.com/msp
+        AnchorPeers:
+        - Host: peer0.org16.example.com
           Port: 7051
   OrgsOrdererGenesis:
     Orderer:
@@ -45,70 +113,204 @@ Profiles:
       - Name: OrdererOrg
         ID: OrdererMSP
         MSPDir: crypto-config/ordererOrganizations/example.com/msp
-        AdminPrincipal: Role.MEMBER
     Consortiums:
       SampleConsortium:
         Organizations:
         - Name: Org1MSP
           ID: Org1MSP
           MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
-          AdminPrincipal: Role.ADMIN
           AnchorPeers:
           - Host: peer0.org1.example.com
             Port: 7051
         - Name: Org2MSP
           ID: Org2MSP
           MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
-          AdminPrincipal: Role.ADMIN
           AnchorPeers:
           - Host: peer0.org2.example.com
             Port: 7051
         - Name: Org3MSP
           ID: Org3MSP
           MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
-          AdminPrincipal: Role.ADMIN
           AnchorPeers:
           - Host: peer0.org3.example.com
             Port: 7051
         - Name: Org4MSP
           ID: Org4MSP
           MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
-          AdminPrincipal: Role.ADMIN
           AnchorPeers:
           - Host: peer0.org4.example.com
+            Port: 7051
+        - Name: Org5MSP
+          ID: Org5MSP
+          MSPDir: crypto-config/peerOrganizations/org5.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org5.example.com
+            Port: 7051
+        - Name: Org6MSP
+          ID: Org6MSP
+          MSPDir: crypto-config/peerOrganizations/org6.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org6.example.com
+            Port: 7051
+        - Name: Org7MSP
+          ID: Org7MSP
+          MSPDir: crypto-config/peerOrganizations/org7.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org7.example.com
+            Port: 7051
+        - Name: Org8MSP
+          ID: Org8MSP
+          MSPDir: crypto-config/peerOrganizations/org8.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org8.example.com
+            Port: 7051
+        - Name: Org9MSP
+          ID: Org9MSP
+          MSPDir: crypto-config/peerOrganizations/org9.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org9.example.com
+            Port: 7051
+        - Name: Org10MSP
+          ID: Org10MSP
+          MSPDir: crypto-config/peerOrganizations/org10.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org10.example.com
+            Port: 7051
+        - Name: Org11MSP
+          ID: Org11MSP
+          MSPDir: crypto-config/peerOrganizations/org11.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org11.example.com
+            Port: 7051
+        - Name: Org12MSP
+          ID: Org12MSP
+          MSPDir: crypto-config/peerOrganizations/org12.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org12.example.com
+            Port: 7051
+        - Name: Org13MSP
+          ID: Org13MSP
+          MSPDir: crypto-config/peerOrganizations/org13.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org13.example.com
+            Port: 7051
+        - Name: Org14MSP
+          ID: Org14MSP
+          MSPDir: crypto-config/peerOrganizations/org14.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org14.example.com
+            Port: 7051
+        - Name: Org15MSP
+          ID: Org15MSP
+          MSPDir: crypto-config/peerOrganizations/org15.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org15.example.com
+            Port: 7051
+        - Name: Org16MSP
+          ID: Org16MSP
+          MSPDir: crypto-config/peerOrganizations/org16.example.com/msp
+          AnchorPeers:
+          - Host: peer0.org16.example.com
             Port: 7051
 Organizations:
 - Name: OrdererOrg
   ID: OrdererMSP
   MSPDir: crypto-config/ordererOrganizations/example.com/msp
-  AdminPrincipal: Role.MEMBER
 - Name: Org1MSP
   ID: Org1MSP
   MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
-  AdminPrincipal: Role.ADMIN
   AnchorPeers:
   - Host: peer0.org1.example.com
     Port: 7051
 - Name: Org2MSP
   ID: Org2MSP
   MSPDir: crypto-config/peerOrganizations/org2.example.com/msp
-  AdminPrincipal: Role.ADMIN
   AnchorPeers:
   - Host: peer0.org2.example.com
     Port: 7051
 - Name: Org3MSP
   ID: Org3MSP
   MSPDir: crypto-config/peerOrganizations/org3.example.com/msp
-  AdminPrincipal: Role.ADMIN
   AnchorPeers:
   - Host: peer0.org3.example.com
     Port: 7051
 - Name: Org4MSP
   ID: Org4MSP
   MSPDir: crypto-config/peerOrganizations/org4.example.com/msp
-  AdminPrincipal: Role.ADMIN
   AnchorPeers:
   - Host: peer0.org4.example.com
+    Port: 7051
+- Name: Org5MSP
+  ID: Org5MSP
+  MSPDir: crypto-config/peerOrganizations/org5.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org5.example.com
+    Port: 7051
+- Name: Org6MSP
+  ID: Org6MSP
+  MSPDir: crypto-config/peerOrganizations/org6.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org6.example.com
+    Port: 7051
+- Name: Org7MSP
+  ID: Org7MSP
+  MSPDir: crypto-config/peerOrganizations/org7.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org7.example.com
+    Port: 7051
+- Name: Org8MSP
+  ID: Org8MSP
+  MSPDir: crypto-config/peerOrganizations/org8.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org8.example.com
+    Port: 7051
+- Name: Org9MSP
+  ID: Org9MSP
+  MSPDir: crypto-config/peerOrganizations/org9.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org9.example.com
+    Port: 7051
+- Name: Org10MSP
+  ID: Org10MSP
+  MSPDir: crypto-config/peerOrganizations/org10.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org10.example.com
+    Port: 7051
+- Name: Org11MSP
+  ID: Org11MSP
+  MSPDir: crypto-config/peerOrganizations/org11.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org11.example.com
+    Port: 7051
+- Name: Org12MSP
+  ID: Org12MSP
+  MSPDir: crypto-config/peerOrganizations/org12.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org12.example.com
+    Port: 7051
+- Name: Org13MSP
+  ID: Org13MSP
+  MSPDir: crypto-config/peerOrganizations/org13.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org13.example.com
+    Port: 7051
+- Name: Org14MSP
+  ID: Org14MSP
+  MSPDir: crypto-config/peerOrganizations/org14.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org14.example.com
+    Port: 7051
+- Name: Org15MSP
+  ID: Org15MSP
+  MSPDir: crypto-config/peerOrganizations/org15.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org15.example.com
+    Port: 7051
+- Name: Org16MSP
+  ID: Org16MSP
+  MSPDir: crypto-config/peerOrganizations/org16.example.com/msp
+  AnchorPeers:
+  - Host: peer0.org16.example.com
     Port: 7051
 Orderer:
   OrdererType: solo
@@ -123,4 +325,3 @@ Orderer:
   - Name: OrdererOrg
     ID: OrdererMSP
     MSPDir: crypto-config/ordererOrganizations/example.com/msp
-    AdminPrincipal: Role.MEMBER

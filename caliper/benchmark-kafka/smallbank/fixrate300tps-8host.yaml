@@ -1,0 +1,33 @@
+---
+test:
+  name: smallbank
+  description: Caliper Experiments finding saturation point r * 6 * numClients
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: smallOperations
+    txDuration:
+    - 150
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 300
+    arguments:
+      accounts: 60000
+      txnPerBatch: 1
+    callback: benchmark-kafka/smallbank/smallbankOperations-8host.js
+  - label: query
+    txNumber:
+    - 5000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 500
+    callback: benchmark/smallbank/query.js
+monitor:
+  type: docker
+  docker:
+    name:
+    - all
+  interval: 1

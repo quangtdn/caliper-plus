@@ -6,8 +6,8 @@ test:
   clients:
     type: zookeeper
     zoo:
-      server: 10.229.42.159:2181
-      clientsPerHost: 5
+      server: 10.0.0.25:2181
+      clientsPerHost: 1
   rounds:
   - label: open
     txNumber:

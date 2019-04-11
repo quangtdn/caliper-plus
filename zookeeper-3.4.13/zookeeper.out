@@ -1,53 +1,177 @@
-2019-03-25 18:16:53,159 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /users/quangtdn/zookeeper-3.4.13/bin/../conf/zoo.cfg
-2019-03-25 18:16:53,163 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
-2019-03-25 18:16:53,163 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
-2019-03-25 18:16:53,163 [myid:] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
-2019-03-25 18:16:53,163 [myid:] - WARN  [main:QuorumPeerMain@116] - Either no config or no quorum defined in config, running  in standalone mode
-2019-03-25 18:16:53,171 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /users/quangtdn/zookeeper-3.4.13/bin/../conf/zoo.cfg
-2019-03-25 18:16:53,171 [myid:] - INFO  [main:ZooKeeperServerMain@98] - Starting server
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.13-2d71af4dbe22557fda74f9a9b4309b15a7487f03, built on 06/29/2018 04:05 GMT
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=slave-22
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=1.8.0_191
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Oracle Corporation
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/users/quangtdn/zookeeper-3.4.13/bin/../build/classes:/users/quangtdn/zookeeper-3.4.13/bin/../build/lib/*.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/slf4j-log4j12-1.7.25.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/slf4j-api-1.7.25.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/netty-3.10.6.Final.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/log4j-1.2.17.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/jline-0.9.94.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/audience-annotations-0.5.0.jar:/users/quangtdn/zookeeper-3.4.13/bin/../zookeeper-3.4.13.jar:/users/quangtdn/zookeeper-3.4.13/bin/../src/java/lib/*.jar:/users/quangtdn/zookeeper-3.4.13/bin/../conf:
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/tmp
-2019-03-25 18:16:53,176 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
-2019-03-25 18:16:53,177 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Linux
-2019-03-25 18:16:53,177 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=amd64
-2019-03-25 18:16:53,177 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=4.4.0-143-generic
-2019-03-25 18:16:53,177 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=quangtdn
-2019-03-25 18:16:53,177 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/users/quangtdn
-2019-03-25 18:16:53,177 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/users/quangtdn/zookeeper-3.4.13
-2019-03-25 18:16:53,183 [myid:] - INFO  [main:ZooKeeperServer@836] - tickTime set to 2000
-2019-03-25 18:16:53,183 [myid:] - INFO  [main:ZooKeeperServer@845] - minSessionTimeout set to -1
-2019-03-25 18:16:53,183 [myid:] - INFO  [main:ZooKeeperServer@854] - maxSessionTimeout set to -1
-2019-03-25 18:16:53,190 [myid:] - INFO  [main:ServerCnxnFactory@117] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
-2019-03-25 18:16:53,195 [myid:] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
-2019-03-25 18:16:56,721 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /127.0.0.1:50946
-2019-03-25 18:16:56,725 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ServerCnxn@324] - The list of known four letter word commands is : [{1936881266=srvr, 1937006964=stat, 2003003491=wchc, 1685417328=dump, 1668445044=crst, 1936880500=srst, 1701738089=envi, 1668247142=conf, 2003003507=wchs, 2003003504=wchp, 1668247155=cons, 1835955314=mntr, 1769173615=isro, 1920298859=ruok, 1735683435=gtmk, 1937010027=stmk}]
-2019-03-25 18:16:56,725 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ServerCnxn@325] - The list of enabled four letter word commands is : [[wchs, stat, stmk, conf, ruok, mntr, srvr, envi, srst, isro, dump, gtmk, crst, cons]]
-2019-03-25 18:16:56,725 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@908] - Processing srvr command from /127.0.0.1:50946
-2019-03-25 18:16:56,726 [myid:] - INFO  [Thread-1:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:50946 (no session established for client)
-2019-03-25 18:17:23,258 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.20:49166
-2019-03-25 18:17:23,261 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.20:49166; will be dropped if server is in r-o mode
-2019-03-25 18:17:23,261 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.20:49166
-2019-03-25 18:17:23,262 [myid:] - INFO  [SyncThread:0:FileTxnLog@213] - Creating new log file: log.4b
-2019-03-25 18:17:23,299 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x1002191bd060000 with negotiated timeout 30000 for client /10.0.0.20:49166
-2019-03-25 18:17:52,841 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.21:52606
-2019-03-25 18:17:52,843 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.21:52606; will be dropped if server is in r-o mode
-2019-03-25 18:17:52,843 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.21:52606
-2019-03-25 18:17:52,876 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x1002191bd060001 with negotiated timeout 30000 for client /10.0.0.21:52606
-2019-03-25 18:21:39,736 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.21:52670
-2019-03-25 18:21:39,738 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.21:52670; will be dropped if server is in r-o mode
-2019-03-25 18:21:39,738 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.21:52670
-2019-03-25 18:21:39,795 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x1002191bd060002 with negotiated timeout 5000 for client /10.0.0.21:52670
-2019-03-25 18:22:11,281 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@383] - Exception causing close of session 0x1002191bd060002: Connection reset by peer
-2019-03-25 18:22:11,282 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.21:52670 which had sessionid 0x1002191bd060002
-2019-03-25 18:22:17,979 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x1002191bd060002, timeout of 5000ms exceeded
-2019-03-25 18:22:17,980 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x1002191bd060002
-2019-03-25 18:22:30,059 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x1002191bd060000
-2019-03-25 18:22:30,111 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.20:49166 which had sessionid 0x1002191bd060000
-2019-03-25 18:22:32,417 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x1002191bd060001
-2019-03-25 18:22:32,468 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.21:52606 which had sessionid 0x1002191bd060001
+2019-04-01 08:22:23,158 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /users/quangtdn/zookeeper-3.4.13/bin/../conf/zoo.cfg
+2019-04-01 08:22:23,162 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2019-04-01 08:22:23,162 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2019-04-01 08:22:23,162 [myid:] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2019-04-01 08:22:23,162 [myid:] - WARN  [main:QuorumPeerMain@116] - Either no config or no quorum defined in config, running  in standalone mode
+2019-04-01 08:22:23,169 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /users/quangtdn/zookeeper-3.4.13/bin/../conf/zoo.cfg
+2019-04-01 08:22:23,169 [myid:] - INFO  [main:ZooKeeperServerMain@98] - Starting server
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.13-2d71af4dbe22557fda74f9a9b4309b15a7487f03, built on 06/29/2018 04:05 GMT
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=slave-25
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=1.8.0_191
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/users/quangtdn/zookeeper-3.4.13/bin/../build/classes:/users/quangtdn/zookeeper-3.4.13/bin/../build/lib/*.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/slf4j-log4j12-1.7.25.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/slf4j-api-1.7.25.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/netty-3.10.6.Final.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/log4j-1.2.17.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/jline-0.9.94.jar:/users/quangtdn/zookeeper-3.4.13/bin/../lib/audience-annotations-0.5.0.jar:/users/quangtdn/zookeeper-3.4.13/bin/../zookeeper-3.4.13.jar:/users/quangtdn/zookeeper-3.4.13/bin/../src/java/lib/*.jar:/users/quangtdn/zookeeper-3.4.13/bin/../conf:
+2019-04-01 08:22:23,174 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2019-04-01 08:22:23,175 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/tmp
+2019-04-01 08:22:23,175 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
+2019-04-01 08:22:23,175 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Linux
+2019-04-01 08:22:23,175 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=amd64
+2019-04-01 08:22:23,175 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=4.4.0-143-generic
+2019-04-01 08:22:23,175 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=quangtdn
+2019-04-01 08:22:23,176 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/users/quangtdn
+2019-04-01 08:22:23,176 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/users/quangtdn/zookeeper-3.4.13
+2019-04-01 08:22:23,181 [myid:] - INFO  [main:ZooKeeperServer@836] - tickTime set to 2000
+2019-04-01 08:22:23,181 [myid:] - INFO  [main:ZooKeeperServer@845] - minSessionTimeout set to -1
+2019-04-01 08:22:23,181 [myid:] - INFO  [main:ZooKeeperServer@854] - maxSessionTimeout set to -1
+2019-04-01 08:22:23,186 [myid:] - INFO  [main:ServerCnxnFactory@117] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2019-04-01 08:22:23,188 [myid:] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
+2019-04-01 08:22:26,745 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /127.0.0.1:39732
+2019-04-01 08:22:26,748 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ServerCnxn@324] - The list of known four letter word commands is : [{1936881266=srvr, 1937006964=stat, 2003003491=wchc, 1685417328=dump, 1668445044=crst, 1936880500=srst, 1701738089=envi, 1668247142=conf, 2003003507=wchs, 2003003504=wchp, 1668247155=cons, 1835955314=mntr, 1769173615=isro, 1920298859=ruok, 1735683435=gtmk, 1937010027=stmk}]
+2019-04-01 08:22:26,749 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ServerCnxn@325] - The list of enabled four letter word commands is : [[wchs, stat, stmk, conf, ruok, mntr, srvr, envi, srst, isro, dump, gtmk, crst, cons]]
+2019-04-01 08:22:26,749 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@908] - Processing srvr command from /127.0.0.1:39732
+2019-04-01 08:22:26,750 [myid:] - INFO  [Thread-1:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:39732 (no session established for client)
+2019-04-01 08:24:27,347 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.24:37990
+2019-04-01 08:24:27,350 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.24:37990; will be dropped if server is in r-o mode
+2019-04-01 08:24:27,350 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.24:37990
+2019-04-01 08:24:27,351 [myid:] - INFO  [SyncThread:0:FileTxnLog@213] - Creating new log file: log.18a26
+2019-04-01 08:24:27,397 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390000 with negotiated timeout 30000 for client /10.0.0.24:37990
+2019-04-01 08:24:36,452 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.25:53102
+2019-04-01 08:24:36,454 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.25:53102; will be dropped if server is in r-o mode
+2019-04-01 08:24:36,454 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.25:53102
+2019-04-01 08:24:36,486 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390001 with negotiated timeout 30000 for client /10.0.0.25:53102
+2019-04-01 08:24:38,614 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.29:46648
+2019-04-01 08:24:38,616 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.29:46648; will be dropped if server is in r-o mode
+2019-04-01 08:24:38,616 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.29:46648
+2019-04-01 08:24:38,654 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390002 with negotiated timeout 30000 for client /10.0.0.29:46648
+2019-04-01 08:24:40,542 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.34:38640
+2019-04-01 08:24:40,544 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.34:38640; will be dropped if server is in r-o mode
+2019-04-01 08:24:40,544 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.34:38640
+2019-04-01 08:24:40,571 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390003 with negotiated timeout 30000 for client /10.0.0.34:38640
+2019-04-01 08:25:42,744 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:50950
+2019-04-01 08:25:42,745 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:50950; will be dropped if server is in r-o mode
+2019-04-01 08:25:42,745 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:50950
+2019-04-01 08:25:42,835 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390004 with negotiated timeout 5000 for client /10.0.0.1:50950
+2019-04-01 08:28:12,474 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1276ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:28:50,029 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1010ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:29:10,491 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1425ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:29:46,086 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1028ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:29:48,325 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1266ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:33:33,103 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390004, likely client has closed socket
+2019-04-01 08:33:33,104 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:50950 which had sessionid 0x10043513f390004
+2019-04-01 08:33:40,062 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390004, timeout of 5000ms exceeded
+2019-04-01 08:33:40,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390004
+2019-04-01 08:37:47,687 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51010
+2019-04-01 08:37:47,688 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51010; will be dropped if server is in r-o mode
+2019-04-01 08:37:47,688 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51010
+2019-04-01 08:37:47,713 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390005 with negotiated timeout 5000 for client /10.0.0.1:51010
+2019-04-01 08:40:35,063 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1247ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:41:05,412 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1047ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:41:18,443 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1064ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:41:40,490 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1096ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:41:48,440 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1045ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:42:18,854 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1134ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:42:22,761 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1038ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:42:54,204 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1447ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:43:01,057 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1099ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:45:34,956 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390005, likely client has closed socket
+2019-04-01 08:45:34,956 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51010 which had sessionid 0x10043513f390005
+2019-04-01 08:45:40,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390005, timeout of 5000ms exceeded
+2019-04-01 08:45:40,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390005
+2019-04-01 08:55:19,037 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51302
+2019-04-01 08:55:19,039 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51302; will be dropped if server is in r-o mode
+2019-04-01 08:55:19,039 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51302
+2019-04-01 08:55:19,085 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390006 with negotiated timeout 5000 for client /10.0.0.1:51302
+2019-04-01 08:55:30,856 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1632ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 08:55:37,365 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1140ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:03:03,535 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390006, likely client has closed socket
+2019-04-01 09:03:03,536 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51302 which had sessionid 0x10043513f390006
+2019-04-01 09:03:10,062 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390006, timeout of 5000ms exceeded
+2019-04-01 09:03:10,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390006
+2019-04-01 09:07:27,706 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51360
+2019-04-01 09:07:27,707 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51360; will be dropped if server is in r-o mode
+2019-04-01 09:07:27,707 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51360
+2019-04-01 09:07:27,742 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390007 with negotiated timeout 5000 for client /10.0.0.1:51360
+2019-04-01 09:07:44,363 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1497ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:07:46,204 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1081ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:15:17,041 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390007, likely client has closed socket
+2019-04-01 09:15:17,041 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51360 which had sessionid 0x10043513f390007
+2019-04-01 09:15:22,062 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390007, timeout of 5000ms exceeded
+2019-04-01 09:15:22,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390007
+2019-04-01 09:19:27,462 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51420
+2019-04-01 09:19:27,464 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51420; will be dropped if server is in r-o mode
+2019-04-01 09:19:27,464 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51420
+2019-04-01 09:19:27,503 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390008 with negotiated timeout 5000 for client /10.0.0.1:51420
+2019-04-01 09:19:54,683 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1067ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:20:02,118 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1499ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:20:33,769 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1141ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:20:37,028 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1127ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:21:07,780 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1594ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:21:17,430 [myid:] - WARN  [SyncThread:0:FileTxnLog@338] - fsync-ing the write ahead log in SyncThread:0 took 1235ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+2019-04-01 09:27:28,073 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390008, likely client has closed socket
+2019-04-01 09:27:28,073 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51420 which had sessionid 0x10043513f390008
+2019-04-01 09:27:34,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390008, timeout of 5000ms exceeded
+2019-04-01 09:27:34,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390008
+2019-04-01 09:35:34,020 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51498
+2019-04-01 09:35:34,022 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51498; will be dropped if server is in r-o mode
+2019-04-01 09:35:34,022 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51498
+2019-04-01 09:35:34,054 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f390009 with negotiated timeout 5000 for client /10.0.0.1:51498
+2019-04-01 09:43:46,144 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390009, likely client has closed socket
+2019-04-01 09:43:46,144 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51498 which had sessionid 0x10043513f390009
+2019-04-01 09:43:52,062 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390009, timeout of 5000ms exceeded
+2019-04-01 09:43:52,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390009
+2019-04-01 10:03:42,269 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51620
+2019-04-01 10:03:42,270 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51620; will be dropped if server is in r-o mode
+2019-04-01 10:03:42,270 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51620
+2019-04-01 10:03:42,297 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f39000a with negotiated timeout 5000 for client /10.0.0.1:51620
+2019-04-01 10:11:52,884 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f39000a, likely client has closed socket
+2019-04-01 10:11:52,885 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51620 which had sessionid 0x10043513f39000a
+2019-04-01 10:11:58,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f39000a, timeout of 5000ms exceeded
+2019-04-01 10:11:58,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f39000a
+2019-04-01 10:42:55,908 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51780
+2019-04-01 10:42:55,910 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51780; will be dropped if server is in r-o mode
+2019-04-01 10:42:55,910 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51780
+2019-04-01 10:42:55,948 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f39000b with negotiated timeout 5000 for client /10.0.0.1:51780
+2019-04-01 10:51:05,946 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f39000b, likely client has closed socket
+2019-04-01 10:51:05,947 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51780 which had sessionid 0x10043513f39000b
+2019-04-01 10:51:12,062 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f39000b, timeout of 5000ms exceeded
+2019-04-01 10:51:12,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f39000b
+2019-04-01 10:56:26,260 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:51846
+2019-04-01 10:56:26,262 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:51846; will be dropped if server is in r-o mode
+2019-04-01 10:56:26,262 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:51846
+2019-04-01 10:56:26,295 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f39000c with negotiated timeout 5000 for client /10.0.0.1:51846
+2019-04-01 11:04:47,923 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f39000c, likely client has closed socket
+2019-04-01 11:04:47,923 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:51846 which had sessionid 0x10043513f39000c
+2019-04-01 11:04:54,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f39000c, timeout of 5000ms exceeded
+2019-04-01 11:04:54,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f39000c
+2019-04-01 11:29:58,636 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:44566
+2019-04-01 11:29:58,637 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:44566; will be dropped if server is in r-o mode
+2019-04-01 11:29:58,638 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:44566
+2019-04-01 11:29:58,680 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f39000d with negotiated timeout 5000 for client /10.0.0.1:44566
+2019-04-01 11:38:31,307 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f39000d, likely client has closed socket
+2019-04-01 11:38:31,307 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:44566 which had sessionid 0x10043513f39000d
+2019-04-01 11:38:38,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f39000d, timeout of 5000ms exceeded
+2019-04-01 11:38:38,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f39000d
+2019-04-01 11:58:31,795 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /10.0.0.1:45288
+2019-04-01 11:58:31,796 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@903] - Connection request from old client /10.0.0.1:45288; will be dropped if server is in r-o mode
+2019-04-01 11:58:31,796 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /10.0.0.1:45288
+2019-04-01 11:58:31,831 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x10043513f39000e with negotiated timeout 5000 for client /10.0.0.1:45288
+2019-04-01 12:07:20,901 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f39000e, likely client has closed socket
+2019-04-01 12:07:20,902 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.1:45288 which had sessionid 0x10043513f39000e
+2019-04-01 12:07:26,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f39000e, timeout of 5000ms exceeded
+2019-04-01 12:07:26,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f39000e
+2019-04-01 14:18:50,751 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390000, likely client has closed socket
+2019-04-01 14:18:50,752 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.24:37990 which had sessionid 0x10043513f390000
+2019-04-01 14:18:50,752 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390001, likely client has closed socket
+2019-04-01 14:18:50,752 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.25:53102 which had sessionid 0x10043513f390001
+2019-04-01 14:18:50,752 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390003, likely client has closed socket
+2019-04-01 14:18:50,752 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.34:38640 which had sessionid 0x10043513f390003
+2019-04-01 14:18:50,801 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x10043513f390002, likely client has closed socket
+2019-04-01 14:18:50,801 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /10.0.0.29:46648 which had sessionid 0x10043513f390002
+2019-04-01 14:19:20,062 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390001, timeout of 30000ms exceeded
+2019-04-01 14:19:20,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390000, timeout of 30000ms exceeded
+2019-04-01 14:19:20,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390003, timeout of 30000ms exceeded
+2019-04-01 14:19:20,063 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x10043513f390002, timeout of 30000ms exceeded
+2019-04-01 14:19:20,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390001
+2019-04-01 14:19:20,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390000
+2019-04-01 14:19:20,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390003
+2019-04-01 14:19:20,063 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x10043513f390002
